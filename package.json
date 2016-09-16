@@ -1,0 +1,67 @@
+{
+  "name": "redux-pipeline",
+  "description": "simple redux-pipeline boilerplate",
+  "version": "1.0.0",
+  "author": "Frode Sundby",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frodesundby/redux-pipeline.git"
+  },
+  "keywords": [
+    "redux",
+    "redux-router",
+    "redux-devtools",
+    "react",
+    "pipeline"
+  ],
+  "bugs": {
+    "url": "https://github.com/frodesundby/redux-pipeline/issues"
+  },
+  "homepage": "https://github.com/frodesundby/redux-pipeline#readme",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "better-npm-run clean && better-npm-run copy-html",
+    "predev": "npm run clean",
+    "dev": "better-npm-run dev"
+  },
+  "betterScripts": {
+    "dev": {
+      "command": "node ./bin/server.js",
+      "env": {
+        "NODE_PATH": "./src",
+        "NODE_ENV": "development",
+        "PORT": 3000
+      }
+    },
+    "clean": {
+      "command": "rimraf dist"
+    },
+    "copy-html": {
+      "command": "cpx ./src/index.html ./dist/"
+    }
+  },
+  "dependencies": {
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-polyfill": "^6.13.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-react": "^6.11.1",
+    "better-npm-run": "0.0.11",
+    "cpx": "^1.5.0",
+    "eventsource-polyfill": "^0.9.6",
+    "express": "^4.14.0",
+    "redux-devtools": "^3.3.1",
+    "rimraf": "^2.5.4",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.7.0",
+    "webpack-hot-middleware": "^2.12.2"
+  }
+}
