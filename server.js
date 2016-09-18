@@ -2,8 +2,8 @@ const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
 
-const config = require('../src/config')
-const webpackConfig = require('./webpack.config.dev');
+const config = require('./config')
+const webpackConfig = require('./webpack.config.dev.js');
 const compiler = webpack(webpackConfig);
 
 const host = config.host || 'localhost'
@@ -11,7 +11,7 @@ const port = config.port || 4242
 
 const serverOptions = {
     quiet: true,
-    noInfo: true,
+    noInfo: false,
     hot: true,
     inline: true,
     lazy: false,
@@ -22,13 +22,12 @@ const serverOptions = {
 
 const app = new express();
 
-
 app.use(require('webpack-dev-middleware')(compiler, serverOptions));
 app.use(require('webpack-hot-middleware')(compiler));
 
 app.get('*', (req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.sendFile(path.join(__dirname, '../dist/index.html'));
+    res.sendFile(path.join(__dirname, './dist/index.html'));
 });
 
 app.listen(port, host, (err) => {
