@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {PropTypes} from 'react'
 import {connect} from 'react-redux'
 
 class App extends React.Component {
@@ -6,15 +6,22 @@ class App extends React.Component {
         super(props)
     }
     render(){
-        console.log("in app.js")
+        console.log("in app.js", this.props.counter)
         return (
-            <div>Hallo igjen</div>
+            <div>
+                <h1>Hallo igjen</h1>
+
+            </div>
         )
     }
 }
 const mapStateToProps = (state) => {
     return {counter: state.counter}
 
+}
+
+App.propTypes = {
+    counter: PropTypes.number.isRequired,
 }
 
 export default connect(mapStateToProps)(App)
