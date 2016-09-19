@@ -10,7 +10,7 @@ const host = config.host || 'localhost'
 const port = config.port || 4242
 
 const serverOptions = {
-    quiet: true,
+    quiet: false,
     noInfo: false,
     hot: true,
     inline: true,

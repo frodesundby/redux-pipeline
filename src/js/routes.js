@@ -1,12 +1,13 @@
 import React from 'react';
 import {IndexRoute, Route} from 'react-router';
-import { Root } from './components/App/Root';
+import { App } from './components/App/App';
+import { NotFound } from './components/NotFound/NotFound';
 
 export default () => {
+    console.log("getting routes")
     return (
-        <Route path="/" component={Root}>
+        <Route path="/" component={App}>
             { /* Home (main) route */ }
-            <IndexRoute component={Home}/>
 
             <Route path="*" component={NotFound} status={404} />
         </Route>
