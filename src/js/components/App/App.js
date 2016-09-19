@@ -1,15 +1,19 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-const App = React.createClass({
+class App extends React.Component {
+    constructor(props){
+        super(props)
+    }
     render(){
         console.log("in app.js")
         return (
             <div>Hallo igjen</div>
         )
     }
-})
+}
 const mapStateToProps = (state) => {
+    return {counter: state.counter}
 
 }
 
