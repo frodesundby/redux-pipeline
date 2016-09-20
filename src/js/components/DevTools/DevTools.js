@@ -2,6 +2,7 @@ import React from 'react';
 import { createDevTools } from 'redux-devtools';
 import ChartMonitor from 'redux-devtools-chart-monitor'
 import DiffMonitor from 'redux-devtools-diff-monitor'
+import Inspector from 'redux-devtools-inspector'
 
 /**
  * These 2 monitors are very commonly used with 'redux-devtools'.
@@ -24,6 +25,7 @@ const DevTools = createDevTools(
         <LogMonitor theme="tomorrow" />
         <ChartMonitor />
         <DiffMonitor />
+        <Inspector />
     </DockMonitor>
 );
 
