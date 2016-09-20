@@ -23,7 +23,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "better-npm-run clean && better-npm-run copy-html",
+    "prebuild": "npm run clean",
     "predev": "npm run clean",
+    "build": "better-npm-run build",
     "dev": "better-npm-run dev"
   },
   "betterScripts": {
@@ -33,6 +35,13 @@
         "NODE_PATH": "./src",
         "NODE_ENV": "development",
         "PORT": 3000
+      }
+    },
+    "build": {
+      "command": "webpack --config webpack.config.prod.js",
+      "env": {
+        "NODE_PATH": "./src",
+        "NODE_ENV": "production"
       }
     },
     "clean": {
@@ -52,6 +61,7 @@
     "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
+    "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
     "babel-polyfill": "^6.13.0",
@@ -60,14 +70,18 @@
     "babel-preset-react-hmre": "^1.1.1",
     "better-npm-run": "0.0.11",
     "cpx": "^1.5.0",
+    "css-loader": "^0.25.0",
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.14.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
     "redux-devtools-log-monitor": "^1.0.11",
     "redux-logger": "^2.6.1",
     "redux-thunk": "^2.1.0",
     "rimraf": "^2.5.4",
+    "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.7.0",
     "webpack-hot-middleware": "^2.12.2"

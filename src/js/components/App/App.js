@@ -17,7 +17,7 @@ class App extends React.Component {
         const { counter, dispatch }  = this.props
         return (
             <div>
-                <h1>Hallo igjen</h1>
+                <h1 className="primary-color">Hallo igjen</h1>
                 <div>{counter}</div>
                 <button type="button" onClick={this.handleClick.bind(this, "increment")}>increment</button>
                 <button type="button" onClick={this.handleClick.bind(this, "decrement")}>decrement</button>
