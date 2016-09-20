@@ -1,5 +1,7 @@
 import React from 'react';
 import { createDevTools } from 'redux-devtools';
+import ChartMonitor from 'redux-devtools-chart-monitor'
+import DiffMonitor from 'redux-devtools-diff-monitor'
 
 /**
  * These 2 monitors are very commonly used with 'redux-devtools'.
@@ -15,8 +17,13 @@ const DevTools = createDevTools(
      * Here, we are placing the LogMonitor within the DockMonitor.
      */
     <DockMonitor toggleVisibilityKey="ctrl-h"
-                 changePositionKey="ctrl-q">
+                 changePositionKey="ctrl-q"
+                 changeMonitorKey="ctrl-m"
+                 defaultIsVisible={true}
+    >
         <LogMonitor theme="tomorrow" />
+        <ChartMonitor />
+        <DiffMonitor />
     </DockMonitor>
 );
 

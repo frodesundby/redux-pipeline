@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './reducers';
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk';
-import DevTools from '../components/App/DevTools';
+import DevTools from '../components/DevTools/DevTools';
 
 /**
  * Entirely optional, this tiny library adds some functionality to

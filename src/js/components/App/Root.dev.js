@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { Provider } from 'react-redux';
-import { Router } from 'react-router'
-import DevTools from './DevTools';
+import React, {Component} from 'react';
+import {Provider} from 'react-redux';
+import {Router} from 'react-router'
+import DevTools from '../DevTools/DevTools';
 import getRoutes from '../../routes'
 
 
@@ -10,7 +10,7 @@ import getRoutes from '../../routes'
  */
 module.exports = class Root extends Component {
     render() {
-        const { store, history } = this.props
+        const {store, history} = this.props
         console.log("in root")
         return (
             /**
@@ -19,11 +19,12 @@ module.exports = class Root extends Component {
              * calls in component hierarchy below.
              */
             <Provider store={store}>
-                <Router history={history}>
-                    {getRoutes()}
-                    {/* Being the dev version of our Root component, we include DevTools below */}
+                <div>
+                    <Router history={history}>
+                        {getRoutes()}
+                    </Router>
                     <DevTools />
-                </Router>
+                </div>
             </Provider>
         );
     }
